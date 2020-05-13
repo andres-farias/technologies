@@ -1,0 +1,18 @@
+plugins {
+    id 'java'
+}
+
+group 'com.ccupido'
+version '0.0.SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+task upper {
+    doLast {
+        String someString = 'Andres'
+        println "Original: $someString"
+        println "Upper case: ${someString.toUpperCase()}"
+    }
+}
