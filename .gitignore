@@ -1,2 +1,5 @@
 # IDE files and folder
 **/.idea
+
+# Gradle files and folders
+**/.gradle
