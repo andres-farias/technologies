@@ -2,4 +2,11 @@
 **/.idea
 
 # Gradle files and folders
+
 **/.gradle
+**/gradlew
+**/gradlew.bat
+**/gradle_build
+
+## The wrapper is not commited to vcs: https://stackoverflow.com/questions/20348451/why-should-the-gradle-wrapper-be-committed-to-vcs 
+**/gradle
