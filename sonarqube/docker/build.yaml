@@ -1,0 +1,57 @@
+version: "3.7"
+services:
+  jenkins:
+    image: jenkinsci/blueocean
+    ports:
+      - 80:8080
+    volumes:
+     #- data-jenkins:/var/jenkins_home
+      - /var/jenkins_home:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - frontend
+    user: root
+
+  influxdb:
+    image: influxdb
+    restart: always
+    ports:
+      - 8086:8086
+    hostname: influxdb
+    environment:
+      - INFLUXDB_DB=jenkins
+      - INFLUXDB_USER=admin
+      - INFLUXDB_USER_PASSWORD=Jenkins2935
+    volumes:
+      - data-influxdb:/var/lib/influxdb
+    networks:
+      - frontend
+    deploy:
+      placement:
+        constraints:
+          - node.role == manager
+
+  sonarqube:
+    image: sonarqube
+    restart: always
+    ports:
+      - 9000:9000
+    hostname: sonarqube
+    volumes:
+      - data-sonarqube_conf:/opt/sonarqube/conf
+      - data-sonarqube_data:/opt/sonarqube/data
+        #      - data-sonarqube_extensions:/opt/sonarqube/extensions
+        #      - data-sonarqube_bundled-plugins:/opt/sonarqube/lib/bundled-plugins
+        #  - data-sonarqube_common:/opt/sonarqube/lib/common
+    networks:
+      - frontend
+
+networks:
+  frontend:
+
+volumes:
+  data-sonarqube_conf:
+  data-sonarqube_data:
+  data-sonarqube_extensions:
+  data-sonarqube_bundled-plugins:
+  data-sonarqube_common:
