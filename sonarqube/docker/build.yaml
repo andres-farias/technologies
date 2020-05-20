@@ -12,25 +12,6 @@ services:
       - frontend
     user: root
 
-  influxdb:
-    image: influxdb
-    restart: always
-    ports:
-      - 8086:8086
-    hostname: influxdb
-    environment:
-      - INFLUXDB_DB=jenkins
-      - INFLUXDB_USER=admin
-      - INFLUXDB_USER_PASSWORD=Jenkins2935
-    volumes:
-      - data-influxdb:/var/lib/influxdb
-    networks:
-      - frontend
-    deploy:
-      placement:
-        constraints:
-          - node.role == manager
-
   sonarqube:
     image: sonarqube
     restart: always
