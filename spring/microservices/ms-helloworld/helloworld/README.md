@@ -10,4 +10,20 @@ There is only [one class](src/main/java/com/bluesky/technologies/springboot/hell
  
 ## Configuration
 
-No special configuration has been performed.
+### Gradle settings
+
+These configurations are performed on the [setting gradle](settings.gradle) file. The configuration is:
+
+ * Gradle project name.
+ ```
+ rootProject.name = 'helloworld'
+ ```
+
+### Property applications
+
+Only one property has been set, in order to redefine the default port server (`8080`):
+
+ * Service port.
+ ```
+ server.port = 9900
+ ```
