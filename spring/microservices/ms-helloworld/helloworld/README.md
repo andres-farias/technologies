@@ -27,3 +27,13 @@ Only one property has been set, in order to redefine the default port server (`8
  ```
  server.port = 9900
  ```
+
+## Testing
+
+The testing is performed with Mockito, based on [this guide](https://spring.io/guides/gs/testing-web/).
+The following tests have been created:
+ * [HelloworldSpringBootSmokeTest](src/test/java/com/bluesky/technologies/springboot/helloworld
+ /HelloworldSpringBootSmokeTest.java), which perform a smoking test on the only controller, so to ensure the
+  controller is properly injected.
+ * [HelloworldSpringBootApplicationTests](src/test/java/com/bluesky/technologies/springboot/helloworld
+ /HelloworldSpringBootApplicationTests.java) 
