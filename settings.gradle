@@ -1,0 +1,3 @@
+rootProject.name = 'technologies'
+
+include 'spring/microservices/ms-helloworld/helloworld'
