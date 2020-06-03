@@ -32,6 +32,15 @@ Only one property has been set, in order to override the default port server (`8
  ```
  server.port = 9000
  ```
+
+ * Zuul endpoints (routes and filters) are enabled. Routes can be retrieved on the `/actuator/routes` endpoint, while
+  the filters can be retrieved on the `/actuator/filters`. This is enabled as it follows:
+ ```
+management.endpoints.web.exposure.include=*
+management.endpoint.routes.enabled=true
+management.endpoint.filters.enabled=true
+ ```
+
  * Services are mapped on the proxy by their project name on the gradle.settings file. Routes to the hello world
   service are mapped to `/helloworld`, so while you send a `/helloworld` request to the backend server, you will have
    to send further request to Zuul to `http://localhost:9001/helloworld/helloworld`. This is achieved by defining the
