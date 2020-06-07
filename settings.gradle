@@ -1,4 +1,0 @@
-rootProject.name = 'technologies'
-
-include 'spring/microservices/ms-helloworld/helloworld'
-include 'spring/apps/netflix-zuul'
