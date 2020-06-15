@@ -16,7 +16,10 @@ public class FactorialMSTest {
     private FactorialMS factorialMS;
 
     @Test
-    public void testFactorial01(){
-        System.out.printf("Logger");
+    public void testFactorial01() {
+        for (long number = 1L; number < 100; number++) {
+            long factorial = factorialMS.factorial(number);
+            assertEquals(number * factorialMS.factorial(number - 1), factorial);
+        }
     }
 }
