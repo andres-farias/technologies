@@ -1,0 +1,5 @@
+rootProject.name = 'spring-multi-projects'
+
+include 'helloworld'
+include 'zuul'
+include 'javamelody-math'
