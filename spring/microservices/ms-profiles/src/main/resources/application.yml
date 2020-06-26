@@ -1,0 +1,31 @@
+spring:
+  profiles:
+    active: "prd"
+
+server:
+  port: "9903"
+
+messages:
+  message: "Hello Default"
+
+---
+
+spring:
+  profiles: "dev"
+
+server:
+  port: "9906"
+
+messages:
+  message: "Hello Development"
+
+---
+
+spring:
+  profiles: "prd"
+
+server:
+  port: "9905"
+
+messages:
+  message: "Hello Production"
