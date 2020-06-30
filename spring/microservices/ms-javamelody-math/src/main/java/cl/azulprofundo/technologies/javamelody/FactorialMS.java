@@ -24,6 +24,5 @@ public class FactorialMS {
         } else {
             return number * factorial(number - 1);
         }
-
     }
 }

@@ -27,7 +27,7 @@
       </ThreadGroup>
       <hashTree>
         <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable" enabled="true">
-          <stringProp name="maximumValue">10</stringProp>
+          <stringProp name="maximumValue">30</stringProp>
           <stringProp name="minimumValue">1</stringProp>
           <stringProp name="outputFormat">0</stringProp>
           <boolProp name="perThread">true</boolProp>

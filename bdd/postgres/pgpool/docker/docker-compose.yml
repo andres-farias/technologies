@@ -1,0 +1,35 @@
+version: "3"
+services:
+  postgres-read:
+    hostname: postgres-read
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postgres
+#    ports:
+#      - 9332:5432
+
+  postgres-write:
+    hostname: postgres-write
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postgres
+#    ports:
+#      - 9333:5432
+
+  pgpool:
+    restart: 'always'
+    image: melvinkcx/rds_pgpool:0.2.9
+    ports:
+      - "9999:9999"
+      - "9998:9000"
+      - "9997:9694"
+    environment:
+      - DB_NAME=postgres
+      - DB_USERNAME=postgres
+      - DB_PASSWORD=postgres
+      - MASTER_NODE_HOSTNAME=postgres-write
+      - MASTER_NODE_PORT=5432
+      - REPLICA_NODE_HOSTNAME_0=postgres-read
+      - REPLICA_NODE_PORT=5432
