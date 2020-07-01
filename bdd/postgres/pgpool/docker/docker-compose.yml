@@ -6,8 +6,8 @@ services:
     restart: always
     environment:
       POSTGRES_PASSWORD: postgres
-#    ports:
-#      - 9332:5432
+  #    ports:
+  #      - 9332:5432
 
   postgres-write:
     hostname: postgres-write
@@ -15,8 +15,8 @@ services:
     restart: always
     environment:
       POSTGRES_PASSWORD: postgres
-#    ports:
-#      - 9333:5432
+  #    ports:
+  #      - 9333:5432
 
   pgpool:
     restart: 'always'
