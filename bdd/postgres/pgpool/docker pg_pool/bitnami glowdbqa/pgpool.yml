@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  pgpool:
+    image: bitnami/pgpool:4
+    ports:
+      - 5432:5432
+
+    volumes:
+      - /Users/a.farias/projects/technologies/bdd/postgres/pgpool/docker/pgpool-ext.conf:/config/myconf.conf
+      - /Users/a.farias/projects/technologies/bdd/postgres/pgpool/docker/pgpasswd:/config/pool_passwd
+    environment:
+      - PGPOOL_BACKEND_NODES=0:10.24.151.241:5432,1:10.24.151.64:5432,2:ngl0038qxu04.tat.corp.globant.com:5432
+      - PGPOOL_SR_CHECK_USER=glow_bc
+      - PGPOOL_SR_CHECK_PASSWORD=c38KXFKG
+      - PGPOOL_ENABLE_LDAP=no
+      - PGPOOL_POSTGRES_USERNAME=glow_bc
+      - PGPOOL_POSTGRES_PASSWORD=c38KXFKG
+      - PGPOOL_ADMIN_USERNAME=admin
+      - PGPOOL_ADMIN_PASSWORD=adminpassword
+      - PGPOOL_USER_CONF_FILE=/config/myconf.conf
+      - PGPOOL_PASSWD_FILE=/config/pool_passwd
+
